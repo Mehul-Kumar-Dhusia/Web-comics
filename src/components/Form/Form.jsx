@@ -40,15 +40,8 @@ const Form = () => {
         <div className={styles.container}>
           <h2>Dashtoon Comic Strips</h2>
 
-          <div style={{ display: "flex", gap: "50px" }}>
-            <div
-              style={{
-                flex: "1",
-                display: "flex",
-                flexDirection: "column",
-                gap: "10px",
-              }}
-            >
+          <div className={styles.HomePage}>
+            <div className={styles.TextAreaContainer}>
               {prompts.map((prompt, index) => {
                 return (
                   <TextArea
@@ -62,14 +55,7 @@ const Form = () => {
               })}
             </div>
 
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "20px",
-                marginTop: "30px",
-              }}
-            >
+            <div className={styles.buttonContainer}>
               <PrimaryButton
                 title="Generate Comic Strips"
                 onClick={handleGenerate}
@@ -93,9 +79,7 @@ const Form = () => {
 
       {showPanel && !loading && (
         <div className={styles.container}>
-          <div
-            style={{ display: "flex", marginTop: "20px", marginBottom: "20px" }}
-          >
+          <div className={styles.panelContainer}>
             <Panel images={images} />
             <PrimaryButton
               title="Clear Strip"
